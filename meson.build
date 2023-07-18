@@ -70,6 +70,7 @@ staging_protocols = {
 	'xdg-system-bell': ['v1'],
 	'xdg-toplevel-drag': ['v1'],
 	'xdg-toplevel-icon': ['v1'],
+	'xdg-toplevel-tag': ['v1'],
 	'xwayland-shell': ['v1'],
 }
 
