@@ -52,6 +52,7 @@ staging_protocols = {
 	'content-type': ['v1'],
 	'cursor-shape': ['v1'],
 	'drm-lease': ['v1'],
+	'ext-background-effect': ['v1'],
 	'ext-data-control': ['v1'],
 	'ext-foreign-toplevel-list': ['v1'],
 	'ext-idle-notify': ['v1'],
