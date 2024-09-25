@@ -76,6 +76,7 @@ staging_protocols = {
 }
 
 experimental_protocols = {
+	'xx-session-management': ['v1'],
 }
 
 protocol_files = []
