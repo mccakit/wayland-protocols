@@ -16,3 +16,6 @@
   Derek Foreman <derek.foreman@collabora.com> (@derekf)
 - wlroots/Sway: Simon Ser <contact@emersion.fr> (@emersion),
   Simon Zeni <simon@bl4ckb0ne.ca> (@bl4ckb0ne)
+- Chromium: Fangzhou Ge <fangzhoug@chromium.org> (@fangzhoug),
+  Nick Yamane <nickdiego@igalia.com> (@nickdiego),
+  Max Ihlenfeldt <max@igalia.com> (@mihlenfeldt)
