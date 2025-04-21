@@ -89,7 +89,7 @@
         Requests text input on the surface previously obtained from the enter
         event.
 
-        This request must be issued every time the active text input changes
+        This request must be issued every time the focused text input changes
         to a new one, including within the current surface. Use
         zwp_text_input_v3.disable when there is no longer any input focus on
         the current surface.
