@@ -47,6 +47,7 @@ unstable_protocols = {
 staging_protocols = {
 	'alpha-modifier': ['v1'],
 	'color-management': ['v1'],
+	'color-representation': ['v1'],
 	'commit-timing': ['v1'],
 	'content-type': ['v1'],
 	'cursor-shape': ['v1'],
