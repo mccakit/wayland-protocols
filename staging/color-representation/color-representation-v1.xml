@@ -248,7 +248,7 @@
       <entry name="smpte240" value="5">
         <description summary="SMPTE ST 240 matrix coefficients">
           Coefficients as defined by
-          - RSMPTE ST 240 (1999)
+          - SMPTE ST 240 (1999)
 
           Equivalent to H.273 MatrixCoefficients code point 7.
           Compatible with pixel formats of the YCbCr family.
