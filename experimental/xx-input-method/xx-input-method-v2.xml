@@ -100,7 +100,7 @@
         Notification that no focused text input currently needs an active 
         input method on this seat.
 
-        This event marks the xx_input_method_v1 object as inactive. The
+        This event marks the xx_input_method_v1 object as inactive.
         compositor must destroy all existing xx_input_popup_surface_v2 objects.
 
         State set with this event is double-buffered. It will get applied on
@@ -215,8 +215,8 @@
         a maximum length of wayland messages, so text can not be longer than
         4000 bytes.
 
-        Values set with this event are double-buffered. They must be applied
-        and reset to initial on the next zwp_text_input_v3.commit request.
+        Values set with this request are double-buffered. They must be applied
+        and reset to initial on the next .commit request.
 
         The initial value of text is an empty string.
       </description>
@@ -244,8 +244,8 @@
         indicates the end of the cursor. It may be equal or different than
         cursor_begin.
 
-        Values set with this event are double-buffered. They must be applied on
-        the next xx_input_method_v1.commit event.
+        Values set with this request are double-buffered. They must be applied on
+        the next xx_input_method_v1.commit request.
 
         The initial value of text is an empty string. The initial value of
         cursor_begin, and cursor_end are both 0.
@@ -267,7 +267,7 @@
         beginning of preedit text, and after_length from its end (see commit
         event sequence).
 
-        Values set with this event are double-buffered. They must be applied
+        Values set with this request are double-buffered. They must be applied
         and reset to initial on the next xx_input_method_v1.commit request.
 
         The initial values of both before_length and after_length are 0.
@@ -340,7 +340,7 @@
 
     <request name="destroy" type="destructor">
       <description summary="destroy the text input">
-        Destroys the zwp_text_input_v2 object and any associated child
+        Destroys the xx_input_method_v1 object and any associated child
         objects.
       </description>
     </request>
