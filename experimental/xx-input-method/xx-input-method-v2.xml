@@ -80,7 +80,7 @@
         This event serves the purpose of providing the compositor with an
         active input method.
 
-        This event resets all state associated with previous enable, disable,
+        This event resets all state associated with previous
         surrounding_text, text_change_cause, and content_type events, as well
         as the state associated with set_preedit_string, commit_string, and
         delete_surrounding_text requests, and destroys any existing input_popup_surface objects.
@@ -102,6 +102,11 @@
 
         This event marks the xx_input_method_v1 object as inactive.
         compositor must destroy all existing xx_input_popup_surface_v2 objects.
+
+        This event resets all state associated with previous
+        surrounding_text, text_change_cause, and content_type events, as well
+        as the state associated with set_preedit_string, commit_string, and
+        delete_surrounding_text requests.
 
         State set with this event is double-buffered. It will get applied on
         the next xx_input_method_v1.done event, and stay valid until changed.
@@ -173,6 +178,7 @@
 
         Values set with this event are double-buffered. They will get applied
         on the next xx_input_method_v1.done event.
+        They get reset to initial on the next committed deactivate event.
 
         The initial value for hint is none, and the initial value for purpose
         is normal.
@@ -246,6 +252,7 @@
 
         Values set with this request are double-buffered. They must be applied on
         the next xx_input_method_v1.commit request.
+        They must be reset to initial on the next committed disable event.
 
         The initial value of text is an empty string. The initial value of
         cursor_begin, and cursor_end are both 0.
