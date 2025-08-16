@@ -151,6 +151,7 @@ foreach protocol_file : installed_protocol_files
 endforeach
 
 include_dirs = []
+headers = []
 if dep_scanner.version().version_compare('>=1.22.90')
 	subdir('include/wayland-protocols')
 	include_dirs = ['include']
@@ -185,6 +186,7 @@ wayland_protocols = declare_dependency(
 	variables: {
 		'pkgdatadir': wayland_protocols_srcdir,
 	},
+	sources: headers,
 )
 
 meson.override_dependency('wayland-protocols', wayland_protocols)
