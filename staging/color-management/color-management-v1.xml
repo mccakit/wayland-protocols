@@ -1045,7 +1045,7 @@
         functions.
 
         When the resulting image description is attached to an image, the
-        content should be encoded and decoded according to the industry standard
+        content should be decoded according to the industry standard
         practices for the transfer characteristic.
 
         Only names advertised with wp_color_manager_v1 event supported_tf_named
@@ -1066,9 +1066,6 @@
         positive half of the curve through the origin. The valid domain and
         range of the curve are all finite real numbers. This curve represents
         the conversion from electrical to optical color channel values.
-
-        When the resulting image description is attached to an image, the
-        content should be encoded with the inverse of the power curve.
 
         The curve exponent shall be multiplied by 10000 to get the argument eexp
         value to carry the precision of 4 decimals.
