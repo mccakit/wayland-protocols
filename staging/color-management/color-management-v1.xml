@@ -50,10 +50,6 @@
     conjunction with the color management extension when necessary,
     particularly with the YUV family of pixel formats.
 
-    Recommendation ITU-T H.273
-    "Coding-independent code points for video signal type identification"
-    shall be referred to as simply H.273 here.
-
     The color-and-hdr repository
     (https://gitlab.freedesktop.org/pq/color-and-hdr) contains
     background information on the protocol design and legacy color management.
@@ -154,13 +150,9 @@
 
     <enum name="primaries">
       <description summary="named color primaries">
-        Named color primaries used to encode well-known sets of primaries. H.273
-        is the authority, when it comes to the exact values of primaries and
-        authoritative specifications, where an equivalent code point exists.
+        Named color primaries used to encode well-known sets of primaries.
 
         A value of 0 is invalid and will never be present in the list of enums.
-
-        Descriptions do list the specifications for convenience.
       </description>
 
       <entry name="srgb" value="1">
@@ -173,7 +165,6 @@
           - IEC 61966-2-4
           - Society of Motion Picture and Television Engineers (SMPTE) RP 177
             (1993) Annex B
-          Equivalent to H.273 ColourPrimaries code point 1.
         </description>
       </entry>
       <entry name="pal_m" value="2">
@@ -184,7 +175,6 @@
             Recommendation for transmission standards for color television
           - United States Federal Communications Commission (2003) Title 47 Code
             of Federal Regulations 73.682 (a)(20)
-          Equivalent to H.273 ColourPrimaries code point 4.
         </description>
       </entry>
       <entry name="pal" value="3">
@@ -194,7 +184,6 @@
           - Rec. ITU-R BT.601-7 625
           - Rec. ITU-R BT.1358-0 625 (historical)
           - Rec. ITU-R BT.1700-0 625 PAL and 625 SECAM
-          Equivalent to H.273 ColourPrimaries code point 5.
         </description>
       </entry>
       <entry name="ntsc" value="4">
@@ -205,13 +194,13 @@
           - Rec. ITU-R BT.1700-0 NTSC
           - SMPTE 170M (2004)
           - SMPTE 240M (1999) (historical)
-          Equivalent to H.273 ColourPrimaries code point 6 and 7.
         </description>
       </entry>
       <entry name="generic_film" value="5">
         <description summary="Generic film with colour filters using Illuminant C">
-          Color primaries as defined by H.273 for generic film.
-          Equivalent to H.273 ColourPrimaries code point 8.
+          Color primaries as defined by Recommendation ITU-T H.273
+          "Coding-independent code points for video signal type identification"
+          for "generic film".
         </description>
       </entry>
       <entry name="bt2020" value="6">
@@ -219,7 +208,6 @@
           Color primaries as defined by
           - Rec. ITU-R BT.2020-2
           - Rec. ITU-R BT.2100-0
-          Equivalent to H.273 ColourPrimaries code point 9.
         </description>
       </entry>
       <entry name="cie1931_xyz" value="7">
@@ -228,21 +216,18 @@
           space by
           - SMPTE ST 428-1
           - (CIE 1931 XYZ as in ISO 11664-1)
-          Equivalent to H.273 ColourPrimaries code point 10.
         </description>
       </entry>
       <entry name="dci_p3" value="8">
         <description summary="Color primaries of the DCI P3 color space as defined by the SMPTE RP 431 standard">
           Color primaries as defined by Digital Cinema System and published in
-          SMPTE RP 431-2 (2011). Equivalent to H.273 ColourPrimaries code point
-          11.
+          SMPTE RP 431-2 (2011).
         </description>
       </entry>
       <entry name="display_p3" value="9">
         <description summary="Color primaries of Display P3 variant of the DCI-P3 color space as defined by the SMPTE EG 432 standard">
           Color primaries as defined by Digital Cinema System and published in
           SMPTE EG 432-1 (2010).
-          Equivalent to H.273 ColourPrimaries code point 12.
         </description>
       </entry>
       <entry name="adobe_rgb" value="10">
@@ -256,13 +241,9 @@
     <enum name="transfer_function">
       <description summary="named transfer functions">
         Named transfer functions used to represent well-known transfer
-        characteristics. H.273 is the authority, when it comes to the exact
-        formulas and authoritative specifications, where an equivalent code
-        point exists.
+        characteristics.
 
         A value of 0 is invalid and will never be present in the list of enums.
-
-        Descriptions do list the specifications for convenience.
       </description>
 
       <entry name="bt1886" value="1">
@@ -271,8 +252,6 @@
           - Rec. ITU-R BT.601-7 525 and 625
           - Rec. ITU-R BT.709-6
           - Rec. ITU-R BT.2020-2
-          These recommendations are referred to by H.273 TransferCharacteristics
-          code points 1, 6, 14, and 15, which are all equivalent.
 
           This TF implies these default luminances from Rec. ITU-R BT.2035:
           - primary color volume minimum: 0.01 cd/m²
@@ -289,7 +268,6 @@
           - United States Federal Communications Commission (2003) Title 47 Code
             of Federal Regulations 73.682 (a) (20)
           - Rec. ITU-R BT.1700-0 625 PAL and 625 SECAM
-          Equivalent to H.273 TransferCharacteristics code point 4.
 
           Note: an sRGB display (IEC 61966-2-1) uses this transfer function.
         </description>
@@ -298,50 +276,40 @@
         <description summary="Assumed display gamma 2.8 transfer function">
           Transfer characteristics as defined by
           - Rec. ITU-R BT.470-6 System B, G (historical)
-          Equivalent to H.273 TransferCharacteristics code point 5.
         </description>
       </entry>
       <entry name="st240" value="4">
         <description summary="SMPTE ST 240 transfer function">
           Transfer characteristics as defined by
           - SMPTE ST 240 (1999)
-          Equivalent to H.273 TransferCharacteristics code point 7.
         </description>
       </entry>
       <entry name="ext_linear" value="5">
         <description summary="extended linear transfer function">
           Linear transfer function defined over all real numbers.
           Normalised electrical values are equal the normalised optical values.
-
-          The differences to H.273 TransferCharacteristics code point 8 are
-          the definition over all real numbers.
         </description>
       </entry>
       <entry name="log_100" value="6">
         <description summary="logarithmic 100:1 transfer function">
           Logarithmic transfer characteristic (100:1 range).
-          Equivalent to H.273 TransferCharacteristics code point 9.
         </description>
       </entry>
       <entry name="log_316" value="7">
         <description summary="logarithmic (100*Sqrt(10) : 1) transfer function">
           Logarithmic transfer characteristic (100 * Sqrt(10) : 1 range).
-          Equivalent to H.273 TransferCharacteristics code point 10.
         </description>
       </entry>
       <entry name="xvycc" value="8">
         <description summary="IEC 61966-2-4 transfer function">
           Transfer characteristics as defined by
           - IEC 61966-2-4
-          Equivalent to H.273 TransferCharacteristics code point 11.
         </description>
       </entry>
       <entry name="srgb" value="9">
         <description summary="sRGB piece-wise transfer function">
           Transfer characteristics as defined by
           - IEC 61966-2-1 sRGB
-          Equivalent to H.273 TransferCharacteristics code point 13 with
-          MatrixCoefficients set to 0.
 
           Note: This is not appropriate for describing sRGB material.
           sRGB material is intended to be viewed on an sRGB display, and
@@ -352,8 +320,6 @@
         <description summary="Extended sRGB piece-wise transfer function">
           Transfer characteristics as defined by
           - IEC 61966-2-1 sYCC
-          Equivalent to H.273 TransferCharacteristics code point 13 with
-          MatrixCoefficients set to anything but 0.
         </description>
       </entry>
       <entry name="st2084_pq" value="11">
@@ -361,7 +327,6 @@
           Transfer characteristics as defined by
           - SMPTE ST 2084 (2014) for 10-, 12-, 14- and 16-bit systems
           - Rec. ITU-R BT.2100-2 perceptual quantization (PQ) system
-          Equivalent to H.273 TransferCharacteristics code point 16.
 
           This TF implies these default luminances
           - primary color volume minimum: 0.005 cd/m²
@@ -379,7 +344,6 @@
         <description summary="SMPTE ST 428 transfer function">
           Transfer characteristics as defined by
           - SMPTE ST 428-1 (2019)
-          Equivalent to H.273 TransferCharacteristics code point 17.
         </description>
       </entry>
       <entry name="hlg" value="13">
@@ -387,7 +351,6 @@
           Transfer characteristics as defined by
           - ARIB STD-B67 (2015)
           - Rec. ITU-R BT.2100-2 hybrid log-gamma (HLG) system
-          Equivalent to H.273 TransferCharacteristics code point 18.
 
           This TF implies these default luminances
           - primary color volume minimum: 0.005 cd/m²
