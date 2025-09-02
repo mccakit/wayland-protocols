@@ -31,9 +31,14 @@
   <description summary="color management protocol">
     The aim of the color management extension is to allow clients to know
     the color properties of outputs, and to tell the compositor about the color
-    properties of their content on surfaces. Doing this enables a compositor
-    to perform automatic color management of content for different outputs
-    according to how content is intended to look like.
+    properties of their content on surfaces. All surface contents must be
+    readily intended for some display, but not necessarily for the display at
+    hand. Doing this enables a compositor to perform automatic color management
+    of content for different outputs according to how content is intended to
+    look like.
+
+    For an introduction, see the section "Color management" in the Wayland
+    documentation at https://wayland.freedesktop.org/docs/html/ .
 
     The color properties are represented as an image description object which
     is immutable after it has been created. A wl_output always has an
@@ -43,12 +48,14 @@
     description on a wl_surface to denote the color characteristics of the
     surface contents.
 
-    An image description includes SDR and HDR colorimetry and encoding, HDR
-    metadata, and viewing environment parameters. An image description does
-    not include the properties set through color-representation extension.
-    It is expected that the color-representation extension is used in
-    conjunction with the color management extension when necessary,
-    particularly with the YUV family of pixel formats.
+    An image description essentially defines a display and (indirectly) its
+    viewing environment. An image description includes SDR and HDR colorimetry
+    and encoding, HDR metadata, and some parameters related to the viewing
+    environment. An image description does not include the properties set
+    through color-representation extension. It is expected that the
+    color-representation extension is used in conjunction with the
+    color-management extension when necessary, particularly with the YUV family
+    of pixel formats.
 
     The color-and-hdr repository
     (https://gitlab.freedesktop.org/pq/color-and-hdr) contains
@@ -241,7 +248,7 @@
     <enum name="transfer_function">
       <description summary="named transfer functions">
         Named transfer functions used to represent well-known transfer
-        characteristics.
+        characteristics of displays.
 
         A value of 0 is invalid and will never be present in the list of enums.
       </description>
@@ -1278,11 +1285,13 @@
 
   <interface name="wp_image_description_v1" version="1">
     <description summary="Colorimetric image description">
-      An image description carries information about the color encoding used on
-      a surface when attached to a wl_surface via
+      An image description carries information about the pixel color encoding
+      and its intended display and viewing environment. The image description is
+      attached to a wl_surface via
       wp_color_management_surface_v1.set_image_description. A compositor can use
       this information to decode pixel values into colorimetrically meaningful
-      quantities.
+      quantities, which allows the compositor to transform the surface contents
+      to become suitable for various displays and viewing environments.
 
       Note, that the wp_image_description_v1 object is not ready to be used
       immediately after creation. The object eventually delivers either the
