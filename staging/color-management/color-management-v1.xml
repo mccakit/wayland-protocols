@@ -57,6 +57,9 @@
     color-management extension when necessary, particularly with the YUV family
     of pixel formats.
 
+    The normative appendix for this protocol is in the appendix.md file beside
+    this XML file.
+
     The color-and-hdr repository
     (https://gitlab.freedesktop.org/pq/color-and-hdr) contains
     background information on the protocol design and legacy color management.
@@ -251,6 +254,8 @@
         characteristics of displays.
 
         A value of 0 is invalid and will never be present in the list of enums.
+
+        See appendix.md for the formulae.
       </description>
 
       <entry name="bt1886" value="1">
